@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import DadJokes from "./components/DadJokes";
+import DailyJoke from "./components/DailyJoke";
 import Favorites from "./components/Favorites";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <TitleStyles>
         <SpanStyles>Daily Dad Joke</SpanStyles>
       </TitleStyles>
+      <DailyJoke />
       <DadJokes />
       <Favorites />
     </AppStyles>
