@@ -1,14 +1,13 @@
 import React from "react";
 import firebase from "firebase";
+import DadJokes from "./components/DadJokes";
 
 function App() {
-  const firebaseApp = firebase.apps[0];
+  // const firebaseApp = firebase.apps[0];
   return (
     <div className='App'>
-      <code>
-        <pre>{JSON.stringify(firebaseApp.options, null, 2)}</pre>
-      </code>
       Firebase
+      <DadJokes />
     </div>
   );
 }
