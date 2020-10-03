@@ -5,6 +5,7 @@ import Favorites from "./components/Favorites";
 
 function App() {
   const AppStyles = styled.div`
+    @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
     max-width: 1100px;
     height: 700px;
     margin: 6rem auto 6rem auto;
@@ -20,6 +21,7 @@ function App() {
   `;
 
   const SpanStyles = styled.span`
+    font-family: "Gamja Flower", cursive;
     background: #dfbb4f;
     border-radius: 9px;
     padding: 1rem 2rem 1rem 2rem;
