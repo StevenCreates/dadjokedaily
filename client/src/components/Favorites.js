@@ -7,7 +7,7 @@ export default function Favorites() {
   const db = firebase.firestore();
 
   React.useEffect(() => {
-    db.collection("notes")
+    db.collection("favorites")
       .get()
       .then((querySnapshot) => {
         const data = querySnapshot.docs.map((doc) => doc.data());
