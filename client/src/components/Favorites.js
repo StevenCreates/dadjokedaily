@@ -11,8 +11,14 @@ export default function Favorites() {
       .get()
       .then((querySnapshot) => {
         const data = querySnapshot.docs.map((doc) => doc.data());
-        console.log(data); // array of cities objects
+        setFavorites(data); // array of cities objects
       });
   }, [db]);
-  return <div></div>;
+  return (
+    <>
+      {favorites.map((joke) => (
+        <div>{joke.body}</div>
+      ))}
+    </>
+  );
 }
