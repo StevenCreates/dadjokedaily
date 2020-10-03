@@ -3,7 +3,7 @@ import styled from "styled-components";
 import firebase from "firebase";
 
 export default function Favorites() {
-  const [state, setstate] = React.useState("");
+  const [favorites, setFavorites] = React.useState("");
   const db = firebase.firestore();
 
   React.useEffect(() => {
