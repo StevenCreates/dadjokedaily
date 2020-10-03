@@ -1,14 +1,38 @@
 import React from "react";
-import firebase from "firebase";
+import styled from "styled-components";
 import DadJokes from "./components/DadJokes";
+import Favorites from "./components/Favorites";
 
 function App() {
-  // const firebaseApp = firebase.apps[0];
+  const AppStyles = styled.div`
+    max-width: 1100px;
+    height: 700px;
+    margin: 6rem auto 6rem auto;
+    background: #43434d;
+    border-radius: 9px;
+  `;
+
+  const TitleStyles = styled.div`
+    color: #f4f3f3;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+  `;
+
+  const SpanStyles = styled.span`
+    background: #dfbb4f;
+    border-radius: 9px;
+    padding: 1rem 2rem 1rem 2rem;
+  `;
+
   return (
-    <div className='App'>
-      Firebase
+    <AppStyles>
+      <TitleStyles>
+        <SpanStyles>Daily Dad Joke</SpanStyles>
+      </TitleStyles>
       <DadJokes />
-    </div>
+      <Favorites />
+    </AppStyles>
   );
 }
 
