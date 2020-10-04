@@ -3,6 +3,7 @@ import styled from "styled-components";
 import DadJokes from "./components/DadJokes";
 import DailyJoke from "./components/DailyJoke";
 import Favorites from "./components/Favorites";
+import useDadJoke from "./hooks/useDadJoke";
 
 function App() {
   const AppStyles = styled.div`
@@ -28,10 +29,13 @@ function App() {
     padding: 1rem 2rem 1rem 2rem;
   `;
 
+  // let Joke = useDadJoke();
+  // console.log(Joke);
+
   return (
     <AppStyles>
       <TitleStyles>
-        <SpanStyles>Daily Dad Joke</SpanStyles>
+        <SpanStyles>Dad Joke Daily</SpanStyles>
       </TitleStyles>
       <DailyJoke />
       <DadJokes />
