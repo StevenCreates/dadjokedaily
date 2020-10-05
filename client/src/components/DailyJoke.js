@@ -33,9 +33,33 @@ export default function DailyJoke() {
     position: absolute;
     margin-left: 4rem;
     color: #dfbb4f;
+    :hover {
+      color: #f4f3f3;
+      transform: rotate(90deg);
+      transition-duration: 1s;
+    }
   `;
 
-  const AddFavoriteStyle = styled.span``;
+  const AddFavoriteStyles = styled.div`
+    text-align: center;
+    padding-top: 0.5rem;
+  `;
+
+  const AddButtonStyles = styled.button`
+    background: #43434d;
+    color: white;
+    border: solid #dfbb4f;
+    border-radius: 7px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 10px;
+    font-size: 12px;
+    :disabled {
+      opacity: 0.4;
+    }
+    :hover {
+      box-shadow: 0 0 10px #dfbb4f;
+    }
+  `;
 
   const getDadJoke = async () => {
     try {
@@ -71,9 +95,11 @@ export default function DailyJoke() {
       <DailyStyles>
         <span>{dadJoke.joke}</span>
       </DailyStyles>
-      <AddFavoriteStyle>
-        <span>Add to community Favorite?</span>
-      </AddFavoriteStyle>
+      <AddFavoriteStyles>
+        <AddButtonStyles type='button' onClick={addFavorite}>
+          Add to community Favorite?
+        </AddButtonStyles>
+      </AddFavoriteStyles>
     </>
   );
 }
