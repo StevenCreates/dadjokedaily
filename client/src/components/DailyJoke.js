@@ -5,9 +5,11 @@ import firebase from "firebase";
 
 export default function DailyJoke() {
   const [dadJoke, setDadJoke] = React.useState({});
+  const [added, setAdded] = React.useState(false);
   const db = firebase.firestore();
 
   const addFavorite = () => {
+    setAdded(true);
     db.collection("favorites").add({
       favorite: dadJoke,
       likes: 1,
@@ -61,6 +63,16 @@ export default function DailyJoke() {
     }
   `;
 
+  const AddedStyles = styled.button`
+    background: #dfbb4f;
+    color: white;
+    border: solid #dfbb4f;
+    border-radius: 7px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 10px;
+    font-size: 12px;
+  `;
+
   const getDadJoke = async () => {
     try {
       const res = await fetch(
@@ -96,9 +108,13 @@ export default function DailyJoke() {
         <span>{dadJoke.joke}</span>
       </DailyStyles>
       <AddFavoriteStyles>
-        <AddButtonStyles type='button' onClick={addFavorite}>
-          Add to community Favorite?
-        </AddButtonStyles>
+        {added ? (
+          <AddedStyles>Added!</AddedStyles>
+        ) : (
+          <AddButtonStyles type='button' onClick={addFavorite}>
+            Add to community Favorite?
+          </AddButtonStyles>
+        )}
       </AddFavoriteStyles>
     </>
   );
