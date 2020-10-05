@@ -19,14 +19,15 @@ export default function DailyJoke() {
   const DailyStyles = styled.div`
     text-align: center;
     margin-top: 2.5rem;
-    color: #f4f3f3;
+    color: black;
     font-size: 24px;
-    background: #7f8994;
+    background: white;
     margin-left: 7rem;
     margin-right: 7rem;
     border-radius: 8px;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   `;
 
   const ButtonStyles = styled.div`
@@ -36,7 +37,7 @@ export default function DailyJoke() {
     margin-left: 4rem;
     color: #dfbb4f;
     :hover {
-      color: #f4f3f3;
+      color: #43434d;
       transform: rotate(90deg);
       transition-duration: 1s;
     }
@@ -50,7 +51,7 @@ export default function DailyJoke() {
   const AddButtonStyles = styled.button`
     background: #43434d;
     color: white;
-    border: solid #dfbb4f;
+
     border-radius: 7px;
     padding: 0.5rem 1rem 0.5rem 1rem;
     margin: 10px;
@@ -74,6 +75,7 @@ export default function DailyJoke() {
   `;
 
   const getDadJoke = async () => {
+    setAdded(false);
     try {
       const res = await fetch(
         "https://cors-anywhere.herokuapp.com/https://icanhazdadjoke.com/",
@@ -105,7 +107,7 @@ export default function DailyJoke() {
       </ButtonStyles>
 
       <DailyStyles>
-        <span>{dadJoke.joke}</span>
+        <span>{dadJoke.joke || "Nice to meet you waiting, I'm Dad...."}</span>
       </DailyStyles>
       <AddFavoriteStyles>
         {added ? (

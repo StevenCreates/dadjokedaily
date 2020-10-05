@@ -6,11 +6,9 @@ import Favorites from "./components/Favorites";
 function App() {
   const AppStyles = styled.div`
     @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
-    max-width: 1100px;
+    max-width: 1400px;
     height: 700px;
     margin: 6rem auto 6rem auto;
-    background: #43434d;
-    border-radius: 9px;
   `;
 
   const TitleStyles = styled.div`

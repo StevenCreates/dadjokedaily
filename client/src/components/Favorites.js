@@ -9,36 +9,31 @@ export default function Favorites() {
   const FavoriteContainer = styled.div`
     margin-left: 7rem;
     margin-right: 7rem;
-    /* border-radius: 8px; */
-    height: 30vh;
-    max-height: 30vh;
+    height: 40vh;
+    max-height: 40vh;
+    background: white;
     overflow-y: scroll;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 7px;
   `;
 
   const CommunityDiv = styled.div`
     width: full;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    background: #dfbb4f;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    color: #f4f3f3;
-    border-radius: 8px;
-    padding-left: 0.25rem;
+    font-weight: 400;
+    border-bottom: #cbd5e0 solid 1px;
+    padding: 1rem;
   `;
 
   const CommunitySpan = styled.div`
-    color: #f4f3f3;
+    color: #dfbb4f;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     text-align: center;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 600;
     margin-top: 3rem;
-    border-bottom: solid #7f8994 3px;
     margin-left: 7rem;
     margin-right: 7rem;
-    margin-bottom: 1rem;
   `;
 
   React.useEffect(() => {
