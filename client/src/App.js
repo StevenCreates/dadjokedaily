@@ -25,9 +25,6 @@ function App() {
     padding: 1rem 2rem 1rem 2rem;
   `;
 
-  // let Joke = useDadJoke();
-  // console.log(Joke);
-
   return (
     <AppStyles>
       <TitleStyles>
